@@ -1,0 +1,9 @@
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<h1>{{ person.name }}</h1>
+
+<form action="{% url 'registration:vote' person.mobile %}" method="post">
+{% csrf_token %}
+
+<input type="submit" value="Vote">
+</form>
